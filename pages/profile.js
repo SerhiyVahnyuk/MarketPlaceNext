@@ -23,7 +23,7 @@ export default function Profile() {
                     </div>
                 )
             } else {
-                fetch("http://localhost:3000/user/",{
+                fetch("https://markerplace.onrender.com/user/",{
                     method:"GET",
                     headers:{
                         key:token
@@ -36,7 +36,7 @@ export default function Profile() {
                     } else {
                         setInfo(user.user)
                     }
-                    fetch("http://localhost:3000/user/products/",{
+                    fetch("https://markerplace.onrender.com/user/products/",{
                         method:"GET",
                         headers:{
                             key:token
@@ -57,7 +57,7 @@ export default function Profile() {
     }, [])
 
     function deleteProduct(e){
-        fetch(`http://localhost:3000/product/${e.target.value}`,{
+        fetch(`https://markerplace.onrender.com/product/${e.target.value}`,{
             method:"DELETE",
             headers:{
                 key:token
@@ -81,7 +81,7 @@ export default function Profile() {
                     {prod.map((product, idx) => {
                         return (
                             <div key={idx}>
-                                <Image loader={()=>`http://localhost:3000/public/${product.prodImage}`} src={`http://localhost:3000/public/${product.prodImage}`} width={500} height={500}  />
+                                <Image loader={()=>`https://markerplace.onrender.com/public/${product.prodImage}`} src={`https://markerplace.onrender.com/public/${product.prodImage}`} width={500} height={500}  />
                                 <h1>{product.name}</h1>
                                 <button type="button" onClick={deleteProduct} value={product.id}>DELETE</button>
                             </div>
