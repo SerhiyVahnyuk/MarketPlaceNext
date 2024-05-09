@@ -25,7 +25,7 @@ export default function Home() {
                 </div>
             )
         } else {
-            fetch("http://localhost:3000/user/",{
+            fetch("https://markerplace.onrender.com/user/",{
                 method:"GET",
                 headers:{
                     key:token
@@ -46,7 +46,7 @@ export default function Home() {
     return (
         <main>
           {info && 
-            <form action="http://localhost:3000/product" method='POST' encType="multipart/form-data">
+            <form action="https://markerplace.onrender.com/product" method='POST' encType="multipart/form-data">
               <input name="key" value={info.sshKey} hidden/>
                 <div>
                     <input type="text" name="name"/>
