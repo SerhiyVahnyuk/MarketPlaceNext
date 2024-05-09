@@ -16,7 +16,7 @@ export default function Auth() {
 
   const LoginButton = async () => {
     console.log(formData)
-    const response = await fetch("http://localhost:3000/userCheck", {
+    const response = await fetch("https://markerplace.onrender.com/userCheck", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export default function Auth() {
         </button>
         <div className="redirectButton">
             <span>Немає аккаунту?</span>
-            <a href="http://localhost:3001/reg/">Створи</a>
+            <a href="/reg/">Створи</a>
         </div>
     </form>
   );
