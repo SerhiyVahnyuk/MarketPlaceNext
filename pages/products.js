@@ -5,7 +5,7 @@ export default function Home() {
   const [prod, setProd] = useState([])
 
   function fetchProd(){
-    fetch("http://localhost:3000/products", {method : "GET"})
+    fetch("https://markerplace.onrender.com/products", {method : "GET"})
       .then((response)=>{
           return response.json()
       }).then((data)=>{
@@ -25,7 +25,7 @@ export default function Home() {
               {prod.map((product, idx) => {
                 return (
                   <div key={idx}>
-                    <Image loader={()=>`http://localhost:3000/public/${product.prodImage}`} src={`http://localhost:3000/public/${product.prodImage}`} width={500} height={500}  />
+                    <Image loader={()=>`https://markerplace.onrender.com/public/${product.prodImage}`} src={`https://markerplace.onrender.com/public/${product.prodImage}`} width={500} height={500}  />
                     <h1>{product.name}</h1>
                   </div>
                 ) 
