@@ -17,7 +17,7 @@ export default function Home() {
   }
 
   function fetchProd(){
-    fetch(`http://localhost:3000/product/${query}`, {method : "GET"})
+    fetch(`https://markerplace.onrender.com/product/${query}`, {method : "GET"})
       .then((response)=>{
           return response.json()
       }).then((data)=>{
@@ -48,7 +48,7 @@ export default function Home() {
         {message}
         { prod &&
             <div>
-                <Image loader={()=>`http://localhost:3000/public/${prod.prodImage}`} src={`http://localhost:3000/public/${prod.prodImage}`} width={500} height={500}  />
+                <Image loader={()=>`https://markerplace.onrender.com/public/${prod.prodImage}`} src={`https://markerplace.onrender.com/public/${prod.prodImage}`} width={500} height={500}  />
                 <p>{prod.name}</p>
                 <p>{prod.price}</p>
                 <p>{prod.description}</p>
